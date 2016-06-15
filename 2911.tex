@@ -1,0 +1,63 @@
+\documentclass[a4paper]{scrartcl}
+\usepackage[l2tabu,orthodox]{nag}% Old habits die hard. All the same, there are commands, classes and packages which are outdated and superseded. nag provides routines to warn the user about the use of those.
+
+\usepackage[all,error]{onlyamsmath}% Error on deprecated math commands like $$ $$.
+\usepackage{listings}
+\title{COMP2911}
+\lstset{language=JAVA}
+\author{Minjie Shen}
+
+\newcommand{\aggregates}{$\diamondsuit\rightarrow $}
+\newcommand{\implements}{\textendash ~\textendash ~\textendash$\triangleright$}
+\newcommand{\extends}{\textendash\textendash\textendash$\triangleright$}
+\newcommand{\uses}{$\longrightarrow$}
+
+\begin{document}
+  \maketitle
+  \section{Object Oriented Design}
+  \section{Programming By Contract}
+  \section{Generic Type \& Polynorphism}
+  
+    Set type
+    \lstinputlisting{code/Set.java}
+    
+    ArrayListSet type
+    \lstinputlisting{code/ArrayListSet.java}
+    
+  \section{Design pattern}
+  
+    \subsection { Iterator Pattern }
+      \subsubsection {Motivation}
+        Access elements of a collection without exposing internal structure.
+      \subsubsection { Intent }
+        Provide a way to access the elements of an aggregate object sequentially without exposing its underly representation.
+      \subsubsection { Implementation }
+        Client \aggregates Aggregate( +createIterator(): Iterator )\\
+        ConcreteAggregate \implements Aggregate\\
+        ConcreteIterator \implements Iterator\\
+        Client \uses Iterator\\
+        \lstinputlisting{code/iter.java}
+        
+    \subsection { Strategy Pattern }
+      \subsubsection {Motivation}
+        Common situations when classes differ only in their behavior. Have ability to select algorithms at runtime.
+      \subsubsection {Intent}
+        Define a family of algorithms, encapsulate each one, and make them interchangeable
+      \subsubsection { Implementation }
+        Context \aggregates Strategy (+BehaviorInterface())\\
+        ConcreteStrategy \implements Strategy\\
+        \lstinputlisting{code/strategy.java}
+        
+    \subsection{Observer Pattern}
+      \subsubsection{Motivation}
+        The cases when certain objects need to be informed about the changes occured in other objects are frequent.
+      \subsubsection{Intent}
+        Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+      \subsubsection{Implementation}
+        Observable \aggregates Observer (+update():void)\\
+        ConcreteObservable \extends Observable\\
+        \lstinputlisting{code/observer.java}
+        
+    \subsection { Decorator Pattern }
+      \subsubsection {Motivation}
+\end{document}

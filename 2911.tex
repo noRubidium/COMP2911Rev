@@ -60,4 +60,26 @@
         
     \subsection { Decorator Pattern }
       \subsubsection {Motivation}
+        Might be necessary to extend an object's functionality dynamically at run time while it's used.
+      \subsubsection {Intention }
+        The intent of this pattern is to add additional responsibilities dynamically to an object.
+      \subsubsection{Implementation}
+        ConcreteComponent \implements Component(+doOperation())\\
+        Decorator \implements Component\\
+        Decorator \aggregates a Component\\
+        ConcreteDecoratorExtendingState \extends Decorator\\
+        \lstinputlisting{code/decorator.java}
+        
+    \subsection { Composite Pattern}
+      \subsubsection {Motivation}
+        Implement tree structure classes
+      \subsubsection {Intention }
+        Treat each element uniformly and to compose objects into tree structures
+      \subsubsection{Implementation}
+        Client \uses Component\\
+        Leaf \implements Component \\
+        Composite \implements Component \\
+        Composite \aggregates Component \\
+        
+        \lstinputlisting{code/composite.java}
 \end{document}

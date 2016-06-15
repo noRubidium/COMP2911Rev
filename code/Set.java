@@ -1,6 +1,7 @@
 
 
-public interface Set<E extends Comparable<E>> extends Iterable<E>, Comparable<Set<E >> {
+public interface Set<E extends Comparable<E>> 
+        extends Iterable<E>, Comparable<Set<E >> {
 	public void addElement(E e);
 	
 	/**

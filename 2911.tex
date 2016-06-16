@@ -15,17 +15,46 @@
 \begin{document}
   \maketitle
   \section{Object Oriented Design}
+    \subsection {Law of Demeter}
+      \begin{itemize}
+        \item Each unit should have only limited knowledge about other units: only units "closely" related to the current unit.
+        \item Each unit should only talk to its friends; don't talk to strangers.
+        \item Only talk to your immediate friends.
+      \end{itemize}
+      
+    \subsection { Liskov Principle }
+      If S extends T, then objects of type T can be replaced with objects of type S with no adverse effects
+    
+    \subsection { UML }
+      Unified Modeling Language makes it possible to describe systems with words and pictures. Especially notable use case diagrams with their stick figures or the widely used class diagrams.
   \section{Programming By Contract}
+    \subsection { Covariance and Contravariance}
+      Assume B \extends A
+      \subsubsection{Convariance}
+        B.method() refines A.method by s-post
+      \subsubsection{Contravariance}
+        B.method() refines A.method by w-pre
+    \subsection {Class Invariant}
+      Property that always holds before and after each operation inside the class.\\
+      Implicitly contained inside each pre and postcondition of all the methods.
+       
+       
+   
   \section{Generic Type \& Polynorphism}
-  
-    Set type
-    \lstinputlisting{code/Set.java}
+    \subsection {Polymorphism}
+      Polymorphism is the ability to treat an object of any subclass of a base class as if it were an object of the base class.
+
+    \subsection {Set type}
+      \lstinputlisting{code/Set.java}
     
     ArrayListSet type
     \lstinputlisting{code/ArrayListSet.java}
     
   \section{Design pattern}
-  
+    \subsection {Design Pattern }
+      Patterns are higher-order designs, which occur repeatedly in object-oriented design. They have been formalized, and are generally considered a good development practice.
+    \subsection { Refactoring }
+      Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behavior.
     \subsection { Iterator Pattern }
       \subsubsection {Motivation}
         Access elements of a collection without exposing internal structure.
